@@ -7,9 +7,6 @@ import twitterkeys as tk
 import requests
 
 execTime = "21:43"
-listOfPages = []
-
-
 
 def urlConstruction(topic):
     temp = topic.replace(' ','_')
