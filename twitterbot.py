@@ -9,15 +9,7 @@ import requests
 execTime = "21:43"
 listOfPages = []
 
-S = requests.Session()
-URL = "https://en.wikipedia.org/w/api.php"
-PARAMS = {
-    "action": "query",
-    "rnnamespace":"0",
-    "format": "json",
-    "list": "random",
-    "rnlimit": "1"
-}
+
 
 def urlConstruction(topic):
     temp = topic.replace(' ','_')
@@ -26,7 +18,15 @@ def urlConstruction(topic):
 
 def wikiRandomCall():
     
-
+    S = requests.Session()
+    URL = "https://en.wikipedia.org/w/api.php"
+    PARAMS = {
+        "action": "query",
+        "rnnamespace":"0",
+        "format": "json",
+        "list": "random",
+        "rnlimit": "1"
+    }
     R = S.get(url=URL, params=PARAMS)
     DATA = R.json()
     RANDOMS = DATA["query"]["random"]
@@ -41,9 +41,6 @@ def wikiRandomCall():
 
     return wikiURL
     
-
-wikiRandomCall()
-
 def job():
     print ("I'm working...")
     now= dt.now()
