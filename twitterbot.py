@@ -6,7 +6,7 @@ import time
 import twitterkeys as tk
 import requests
 
-execTime = "20:36"
+execTime = "21:43"
 listOfPages = []
 
 S = requests.Session()
@@ -38,6 +38,8 @@ def wikiRandomCall():
     print(wikiURL)
     
     S.close()
+
+    return wikiURL
     
 
 wikiRandomCall()
@@ -67,12 +69,12 @@ def job():
         print('Error! Failed to get request token.')
 
     #get the random wiki page
-    
+    wiki = wikiRandomCall()
 
 
     #below posts a tweet
     api = tweepy.API(auth)
-    api.update_status("it is: " + execTime)
+    api.update_status("Here's a random wikipedia article: " + wiki)
     return
 
 schedule.every().day.at(execTime).do(job)
