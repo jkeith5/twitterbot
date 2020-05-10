@@ -19,7 +19,10 @@ PARAMS = {
     "rnlimit": "1"
 }
 
-def urlConstruction(
+def urlConstruction(topic):
+    temp = topic.replace(' ','_')
+    fin = "https://en.wikipedia.org/wiki/"+temp
+    return fin
 
 def wikiRandomCall():
     
@@ -31,7 +34,8 @@ def wikiRandomCall():
         if (r["id"]):
             titlestring = (r["title"])
         print(titlestring)
-    
+    wikiURL = urlConstruction(titlestring)
+    print(wikiURL)
     
     S.close()
     
@@ -78,6 +82,4 @@ while True:
     time.sleep(60) # wait one minute
 
     
-
-
 
