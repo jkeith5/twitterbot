@@ -6,7 +6,7 @@ import time
 import twitterkeys as tk
 import requests
 
-execTime = "21:43"
+execTime = "23:06"
 
 def urlConstruction(topic):
     temp = topic.replace(' ','_')
@@ -68,7 +68,7 @@ def job():
 
     #below posts a tweet
     api = tweepy.API(auth)
-    api.update_status("Here's a random wikipedia article: " + wiki)
+    api.update_status("You ever heard about " + wiki+ " ?")
     return
 
 schedule.every().day.at(execTime).do(job)
