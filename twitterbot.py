@@ -6,7 +6,7 @@ import time
 import twitterkeys as tk
 import requests
 
-execTime = "23:06"
+execTime = "23:01"
 
 def urlConstruction(topic):
     temp = topic.replace(' ','_')
