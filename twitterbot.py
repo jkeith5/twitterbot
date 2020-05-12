@@ -67,8 +67,6 @@ auth = tweepy.OAuthHandler(consumer_key,
 auth.set_access_token(access_token,
                       access_token_secret)
 
-api = tweepy.API(auth)
-
 try:
     redirect_url = auth.get_authorization_url()
 except tweepy.TweepError:
