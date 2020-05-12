@@ -22,7 +22,6 @@ def constructPreface(file):
     prefaceList = []
     for line in file:
         prefaceList.append(line)
-    print(random.choice(prefaceList))
     return random.choice(prefaceList)
 
 #asks wiki API for a random article(specified by rnnamespace being 0
@@ -51,11 +50,7 @@ prefaceFile = open("prefacesFile.txt", "r")
 prefaceFinal = constructPreface(prefaceFile)
 prefaceFile.close()
 
-
-now= dt.now()
-current_time = now.strftime("%H:%M:%S")
-print("Current time = ", current_time)
-
+#import keys
 consumer_key = tk.consumer_key
 consumer_secret = tk.consumer_secret
 access_token = tk.access_token
